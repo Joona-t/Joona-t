@@ -11,10 +11,6 @@ and quietly retired. all of it was worth making.
 
 LoveSpark is a passion project
 
-Sparky is next. an iOS companion for the neurodivergent mind.
-not a productivity app. something more like a patient friend. 
-I envision it being an AI companion that grows alongside you.
-
 ---
 
 right now i'm learning the more technical side of things.
