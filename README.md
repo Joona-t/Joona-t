@@ -15,11 +15,11 @@ LoveSpark is a passion project
 
 right now i'm learning the more technical side of things.
 math. physics. how models actually work. 
-less vibe, more depth. still building while i figure it out.
+less vibes, more depth.
 
 the gap between what i can imagine and what i can build
 is the only metric that matters to me.
 
-*curiosity is the whole game.*
+*curiosity is the whole game*
 
 Good Vibes Only 😎🤙⚡
