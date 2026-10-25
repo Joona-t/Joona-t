@@ -20,4 +20,7 @@ is the only metric that matters to me.
 
 *curiosity is the whole game*
 
-Good Vibes Only 𓈗 LoveSpark is a passion project
+♡ LoveSpark is a passion project ♡
+
+Good Vibes Only 𓈗 
+
