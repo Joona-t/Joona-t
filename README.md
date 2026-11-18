@@ -1,4 +1,7 @@
-# Joona Tyrninoksa
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <img src="assets/header-light.svg" width="100%" alt="Joona Tyrninoksa. building things to understand them. human curiosity × machine intelligence">
+</picture>
 
 building things to understand them.
 most of it breaks. that's the whole point.
@@ -20,7 +23,16 @@ is the only metric that matters to me.
 
 *curiosity is the whole game*
 
-♡ LoveSpark is a passion project ♡
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/languages-dark.svg">
+  <img src="assets/languages-light.svg" width="100%" alt="Languages by number of repos that use them. Python leads, then HTML, JavaScript, CSS, Shell, Swift, TypeScript, PowerShell and Rust.">
+</picture>
 
-Good Vibes Only 𓈗 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg">
+  <img src="assets/stack-light.svg" width="100%" alt="Stack: browser extensions (Manifest V3, vanilla JS, WebExtensions), native apps (Swift, SwiftUI, Expo), agents and AI (Claude Code, MCP, LangGraph, local models), creative (Manim, Blender, Godot, p5.js).">
+</picture>
 
+♡ [LoveSpark](https://lovespark.love) is a passion project ♡
+
+Good Vibes Only 𓈗

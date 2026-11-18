@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="header-light" viewBox="0 0 600 190" width="600" height="190" role="img" aria-label="Joona Tyrninoksa. building things to understand them. human curiosity × machine intelligence" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace">
+<title>Joona Tyrninoksa. building things to understand them. human curiosity × machine intelligence</title>
+<defs><linearGradient id="header-light-g" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e91e8c"/><stop offset="1" stop-color="#9b5de5"/></linearGradient></defs>
+<style>
+#header-light .cover { animation: header-light-type 12s steps(35) infinite; }
+#header-light .cur { animation: header-light-cur 12s steps(35) infinite, header-light-blink 1s steps(1) infinite; }
+#header-light .sub { animation: header-light-in 12s ease-out infinite; }
+#header-light .tw { animation: header-light-tw 3.2s ease-in-out infinite; }
+#header-light .orbit { animation: header-light-spin 14s linear infinite; }
+#header-light .pulse { animation: header-light-pulse 3.2s ease-in-out infinite; }
+@keyframes header-light-type { 0% { transform: scaleX(1); } 25%, 100% { transform: scaleX(0); } }
+@keyframes header-light-cur { 0% { transform: translateX(-357.0px); } 25%, 100% { transform: translateX(0); } }
+@keyframes header-light-blink { 0% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes header-light-in { 0%, 26% { opacity: 0; } 34%, 100% { opacity: 1; } }
+@keyframes header-light-tw { 0%, 100% { opacity: .25; transform: scale(.6); } 50% { opacity: 1; transform: scale(1); } }
+@keyframes header-light-spin { to { transform: rotate(360deg); } }
+@keyframes header-light-pulse { 0%, 100% { transform: scale(.92); } 50% { transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { #header-light * { animation: none !important; } }
+</style>
+<rect x="1" y="1" width="598" height="188" rx="14" fill="#fff3f8" stroke="#ffb6d5" stroke-width="2"/>
+<g transform="translate(146,19)"><path class="tw" style="animation-delay:-0.58s" d="M0,-4 Q0,0 4,0 Q0,0 0,4 Q0,0 -4,0 Q0,0 0,-4Z" fill="#e91e8c"/></g>
+<g transform="translate(333,18)"><path class="tw" style="animation-delay:-1.84s" d="M0,-7 Q0,0 7,0 Q0,0 0,7 Q0,0 -7,0 Q0,0 0,-7Z" fill="#9b5de5"/></g>
+<g transform="translate(38,24)"><path class="tw" style="animation-delay:-2.80s" d="M0,-7 Q0,0 7,0 Q0,0 0,7 Q0,0 -7,0 Q0,0 0,-7Z" fill="#9b5de5"/></g>
+<g transform="translate(231,17)"><path class="tw" style="animation-delay:-0.92s" d="M0,-4 Q0,0 4,0 Q0,0 0,4 Q0,0 -4,0 Q0,0 0,-4Z" fill="#e91e8c"/></g>
+<g transform="translate(261,161)"><path class="tw" style="animation-delay:-1.64s" d="M0,-4 Q0,0 4,0 Q0,0 0,4 Q0,0 -4,0 Q0,0 0,-4Z" fill="#9b5de5"/></g>
+<g transform="translate(43,20)"><path class="tw" style="animation-delay:-0.49s" d="M0,-5 Q0,0 5,0 Q0,0 0,5 Q0,0 -5,0 Q0,0 0,-5Z" fill="#9b5de5"/></g>
+<g transform="translate(133,162)"><path class="tw" style="animation-delay:-0.13s" d="M0,-7 Q0,0 7,0 Q0,0 0,7 Q0,0 -7,0 Q0,0 0,-7Z" fill="#e91e8c"/></g>
+<g transform="translate(235,28)"><path class="tw" style="animation-delay:-2.45s" d="M0,-7 Q0,0 7,0 Q0,0 0,7 Q0,0 -7,0 Q0,0 0,-7Z" fill="#9b5de5"/></g>
+<g transform="translate(164,26)"><path class="tw" style="animation-delay:-1.09s" d="M0,-5 Q0,0 5,0 Q0,0 0,5 Q0,0 -5,0 Q0,0 0,-5Z" fill="#9b5de5"/></g>
+<g transform="translate(517,26)"><path class="tw" style="animation-delay:-1.86s" d="M0,-5 Q0,0 5,0 Q0,0 0,5 Q0,0 -5,0 Q0,0 0,-5Z" fill="#e91e8c"/></g>
+<g transform="translate(503,32)"><path class="tw" style="animation-delay:-2.69s" d="M0,-5 Q0,0 5,0 Q0,0 0,5 Q0,0 -5,0 Q0,0 0,-5Z" fill="#9b5de5"/></g>
+<g transform="translate(493,174)"><path class="tw" style="animation-delay:-2.23s" d="M0,-4 Q0,0 4,0 Q0,0 0,4 Q0,0 -4,0 Q0,0 0,-4Z" fill="#e91e8c"/></g>
+<g transform="translate(476,161)"><path class="tw" style="animation-delay:-2.34s" d="M0,-5 Q0,0 5,0 Q0,0 0,5 Q0,0 -5,0 Q0,0 0,-5Z" fill="#9b5de5"/></g>
+<text x="32" y="78" font-size="34" font-weight="700" fill="url(#header-light-g)" text-anchor="start" textLength="326.4" lengthAdjust="spacingAndGlyphs">Joona Tyrninoksa</text>
+<text x="32" y="118" font-size="17" font-weight="400" fill="#4a0827" text-anchor="start" textLength="357.0" lengthAdjust="spacingAndGlyphs">building things to understand them.</text>
+<g transform="translate(390.0,102)"><rect class="cover" x="-359.0" width="359.0" height="24" fill="#fff3f8"/></g>
+<g transform="translate(392.0,104)"><rect class="cur" width="9" height="18" fill="#e91e8c"/></g>
+<text x="32" y="150" font-size="16" font-weight="400" fill="#6b2848" text-anchor="start" textLength="364.8" lengthAdjust="spacingAndGlyphs" class="sub">human curiosity × machine intelligence</text>
+<g transform="translate(500,96)"><g class="orbit"><circle cx="46" r="4" fill="#9b5de5"/><circle cx="-46" r="3" fill="#e91e8c"/><circle r="46" fill="none" stroke="#ffb6d5" stroke-width="1.5" stroke-dasharray="3 7"/></g><path class="pulse" d="M0,-30 Q0,0 30,0 Q0,0 0,30 Q0,0 -30,0 Q0,0 0,-30Z" fill="url(#header-light-g)"/></g>
+</svg>

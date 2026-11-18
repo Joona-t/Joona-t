@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="languages-light" viewBox="0 0 600 414" width="600" height="414" role="img" aria-label="Languages by number of repos: Python 192, HTML 164, JavaScript 151, CSS 136, Shell 64, Swift 34, TypeScript 28, PowerShell 14, Rust 9. Also C, C++, Go, GDScript, TeX." font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace">
+<title>Languages by number of repos: Python 192, HTML 164, JavaScript 151, CSS 136, Shell 64, Swift 34, TypeScript 28, PowerShell 14, Rust 9. Also C, C++, Go, GDScript, TeX.</title>
+<defs><linearGradient id="languages-light-g" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e91e8c"/><stop offset="1" stop-color="#9b5de5"/></linearGradient></defs>
+<style>
+#languages-light .bar { animation: languages-light-grow 1.4s cubic-bezier(.2,.8,.2,1) both; }
+#languages-light .n { animation: languages-light-in .6s ease-out both; }
+@keyframes languages-light-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes languages-light-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { #languages-light * { animation: none !important; } }
+</style>
+<rect x="1" y="1" width="598" height="412" rx="14" fill="#fff3f8" stroke="#ffb6d5" stroke-width="2"/>
+<text x="32" y="46" font-size="20" font-weight="700" fill="#4a0827" text-anchor="start" textLength="108.0" lengthAdjust="spacingAndGlyphs">languages</text>
+<text x="32" y="72" font-size="16" font-weight="400" fill="#6b2848" text-anchor="start" textLength="316.8" lengthAdjust="spacingAndGlyphs">how many of my 290 repos use each</text>
+<text x="32" y="109" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="57.6" lengthAdjust="spacingAndGlyphs">Python</text>
+<rect x="140" y="98" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,98)"><rect class="bar" style="animation-delay:0.00s" width="370.0" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:0.60s" x="568" y="109" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="28.8" lengthAdjust="spacingAndGlyphs" class="n">192</text>
+<text x="32" y="139" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="38.4" lengthAdjust="spacingAndGlyphs">HTML</text>
+<rect x="140" y="128" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,128)"><rect class="bar" style="animation-delay:0.12s" width="316.0" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:0.72s" x="568" y="139" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="28.8" lengthAdjust="spacingAndGlyphs" class="n">164</text>
+<text x="32" y="169" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="96.0" lengthAdjust="spacingAndGlyphs">JavaScript</text>
+<rect x="140" y="158" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,158)"><rect class="bar" style="animation-delay:0.24s" width="291.0" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:0.84s" x="568" y="169" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="28.8" lengthAdjust="spacingAndGlyphs" class="n">151</text>
+<text x="32" y="199" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="28.8" lengthAdjust="spacingAndGlyphs">CSS</text>
+<rect x="140" y="188" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,188)"><rect class="bar" style="animation-delay:0.36s" width="262.1" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:0.96s" x="568" y="199" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="28.8" lengthAdjust="spacingAndGlyphs" class="n">136</text>
+<text x="32" y="229" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="48.0" lengthAdjust="spacingAndGlyphs">Shell</text>
+<rect x="140" y="218" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,218)"><rect class="bar" style="animation-delay:0.48s" width="123.3" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:1.08s" x="568" y="229" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="19.2" lengthAdjust="spacingAndGlyphs" class="n">64</text>
+<text x="32" y="259" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="48.0" lengthAdjust="spacingAndGlyphs">Swift</text>
+<rect x="140" y="248" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,248)"><rect class="bar" style="animation-delay:0.60s" width="65.5" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:1.20s" x="568" y="259" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="19.2" lengthAdjust="spacingAndGlyphs" class="n">34</text>
+<text x="32" y="289" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="96.0" lengthAdjust="spacingAndGlyphs">TypeScript</text>
+<rect x="140" y="278" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,278)"><rect class="bar" style="animation-delay:0.72s" width="54.0" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:1.32s" x="568" y="289" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="19.2" lengthAdjust="spacingAndGlyphs" class="n">28</text>
+<text x="32" y="319" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="96.0" lengthAdjust="spacingAndGlyphs">PowerShell</text>
+<rect x="140" y="308" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,308)"><rect class="bar" style="animation-delay:0.84s" width="27.0" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:1.44s" x="568" y="319" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="19.2" lengthAdjust="spacingAndGlyphs" class="n">14</text>
+<text x="32" y="349" font-size="16" font-weight="400" fill="#4a0827" text-anchor="start" textLength="38.4" lengthAdjust="spacingAndGlyphs">Rust</text>
+<rect x="140" y="338" width="370" height="12" rx="6" fill="#ffd9e9"/>
+<g transform="translate(140,338)"><rect class="bar" style="animation-delay:0.96s" width="17.3" height="12" rx="6" fill="url(#languages-light-g)"/></g>
+<text style="animation-delay:1.56s" x="568" y="349" font-size="16" font-weight="400" fill="#6b2848" text-anchor="end" textLength="9.6" lengthAdjust="spacingAndGlyphs" class="n">9</text>
+<text x="32" y="388" font-size="16" font-weight="400" fill="#6b2848" text-anchor="start" textLength="336.0" lengthAdjust="spacingAndGlyphs">also  C · C++ · Go · GDScript · TeX</text>
+</svg>
