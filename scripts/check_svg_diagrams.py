@@ -56,9 +56,12 @@ JS = r"""() => {
     }
     const strokes = [...svg.querySelectorAll("path, line, polyline")].filter(e => !e.closest("defs, marker, text"))
       .map(el => ({el, pts: points(el)}));
-    const labels = [...svg.querySelectorAll("text")].filter(t => t.textContent.trim()).map(t => ({t, r: bb(t)}));
+    // glyph art (text[data-art]) is a picture, not labels: it is not checked against itself, but no label may sit on it
+    const labels = [...svg.querySelectorAll("text:not([data-art])")].filter(t => t.textContent.trim()).map(t => ({t, r: bb(t)}));
+    const art = [...svg.querySelectorAll("text[data-art]")].map(bb);
     labels.forEach(({t, r}, i) => {
       const name = JSON.stringify(t.textContent.trim().slice(0, 40));
+      if (art.some(a => !apart(r, a))) out.push(`${id}: label ${name} sits on the glyph art`);
       if (!inside(r, view)) out.push(`${id}: label ${name} leaves the viewBox`);
       boxes.forEach(b => { if (!inside(r, b) && !apart(r, b)) out.push(`${id}: label ${name} straddles a box edge`); });
       const core = shrink(r, 1), cs = getComputedStyle(t);

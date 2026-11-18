@@ -11,22 +11,24 @@ whatever monospace font the reader's system has.
 """
 import datetime
 import json
-import random
 import subprocess
 import sys
 from collections import Counter
 from html import escape
 from pathlib import Path
+from xml.etree import ElementTree
+
+import glyphs
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "languages.json"
 W = 600
 FONT = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
-THEMES = {
-    "dark": dict(bg="#1c0b16", line="#5a1f40", text="#ffe9f3", muted="#e7a9c8", track="#35122a",
-                 a="#ff8fc2", b="#c79bff", chip="#2a1021"),
-    "light": dict(bg="#fff3f8", line="#ffb6d5", text="#4a0827", muted="#6b2848", track="#ffd9e9",
-                  a="#e91e8c", b="#9b5de5", chip="#ffffff"),
+THEMES = {   # basalt (lovespark.love's default theme) and cream paper (the Glyph Grid look)
+    "dark": dict(bg="#1b1d21", line="#3a3d44", text="#efe6d2", muted="#a9aeb6", track="#2b2e34",
+                 a="#d9a23b", b="#f4c46a", chip="#22252a", ink="#efe6d2", hot="#f4c46a"),
+    "light": dict(bg="#f4ecd8", line="#cfc2a3", text="#1b1d21", muted="#5a554a", track="#e2d6ba",
+                  a="#1b1d21", b="#6b6455", chip="#fbf6e8", ink="#1b1d21", hot="#8a4f0c"),
 }
 BARS = 9                                    # languages drawn as bars
 ALSO = ["C", "C++", "Go", "GDScript", "TeX"]  # named under the bars
@@ -54,10 +56,6 @@ def text(x, y, s, size, fill, weight=400, cls="", anchor="start"):
             f'{f" class={chr(34)}{cls}{chr(34)}" if cls else ""}>{escape(s)}</text>')
 
 
-def star(r):
-    return f"M0,{-r} Q0,0 {r},0 Q0,0 0,{r} Q0,0 {-r},0 Q0,0 0,{-r}Z"
-
-
 def svg(uid, h, t, css, body, label):
     return f'''<svg xmlns="http://www.w3.org/2000/svg" id="{uid}" viewBox="0 0 {W} {h}" width="{W}" height="{h}" role="img" aria-label="{escape(label)}" font-family="{FONT}">
 <title>{escape(label)}</title>
@@ -73,37 +71,25 @@ def svg(uid, h, t, css, body, label):
 
 
 def header(theme, t):
-    uid, h = f"header-{theme}", 190
+    uid, h = f"header-{theme}", glyphs.HEIGHT + 76
     line = "building things to understand them."
-    size, x, y = 17, 32, 118
+    size, x, y = 17, 32, glyphs.HEIGHT + 24
     tw = len(line) * size * 0.6
-    css = f'''#{uid} .cover {{ animation: {uid}-type 12s steps({len(line)}) infinite; }}
+    gcss, grid = glyphs.glyph_grid(uid, t, W)
+    css = gcss + f'''
+#{uid} .cover {{ transform: scaleX(0); animation: {uid}-type 12s steps({len(line)}) infinite; }}
 #{uid} .cur {{ animation: {uid}-cur 12s steps({len(line)}) infinite, {uid}-blink 1s steps(1) infinite; }}
 #{uid} .sub {{ animation: {uid}-in 12s ease-out infinite; }}
-#{uid} .tw {{ animation: {uid}-tw 3.2s ease-in-out infinite; }}
-#{uid} .orbit {{ animation: {uid}-spin 14s linear infinite; }}
-#{uid} .pulse {{ animation: {uid}-pulse 3.2s ease-in-out infinite; }}
 @keyframes {uid}-type {{ 0% {{ transform: scaleX(1); }} 25%, 100% {{ transform: scaleX(0); }} }}
 @keyframes {uid}-cur {{ 0% {{ transform: translateX({-tw:.1f}px); }} 25%, 100% {{ transform: translateX(0); }} }}
 @keyframes {uid}-blink {{ 0% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
-@keyframes {uid}-in {{ 0%, 26% {{ opacity: 0; }} 34%, 100% {{ opacity: 1; }} }}
-@keyframes {uid}-tw {{ 0%, 100% {{ opacity: .25; transform: scale(.6); }} 50% {{ opacity: 1; transform: scale(1); }} }}
-@keyframes {uid}-spin {{ to {{ transform: rotate(360deg); }} }}
-@keyframes {uid}-pulse {{ 0%, 100% {{ transform: scale(.92); }} 50% {{ transform: scale(1.06); }} }}'''
-    rnd = random.Random(7)
-    spots = [(rnd.uniform(24, 400), rnd.choice([rnd.uniform(16, 34), rnd.uniform(160, 176)])) for _ in range(9)]
-    spots += [(rnd.uniform(420, 576), rnd.uniform(16, 36)) for _ in range(2)] + [(rnd.uniform(420, 576), rnd.uniform(156, 176)) for _ in range(2)]
-    body = [f'<g transform="translate({sx:.0f},{sy:.0f})"><path class="tw" style="animation-delay:{-rnd.uniform(0, 3.2):.2f}s" '
-            f'd="{star(rnd.choice([4, 5, 7]))}" fill="{rnd.choice([t["a"], t["b"]])}"/></g>' for sx, sy in spots]
-    body += [
-        text(32, 78, "Joona Tyrninoksa", 34, f"url(#{uid}-g)", 700),
+@keyframes {uid}-in {{ 0%, 26% {{ opacity: 0; }} 34%, 100% {{ opacity: 1; }} }}'''
+    body = [
+        grid,
         text(x, y, line, size, t["text"]),
         f'<g transform="translate({x + tw + 1:.1f},{y - 16})"><rect class="cover" x="{-tw - 2:.1f}" width="{tw + 2:.1f}" height="24" fill="{t["bg"]}"/></g>',
-        f'<g transform="translate({x + tw + 3:.1f},{y - 14})"><rect class="cur" width="9" height="18" fill="{t["a"]}"/></g>',
-        text(32, 150, "human curiosity × machine intelligence", 16, t["muted"], cls="sub"),
-        f'<g transform="translate(500,96)"><g class="orbit"><circle cx="46" r="4" fill="{t["b"]}"/><circle cx="-46" r="3" fill="{t["a"]}"/>'
-        f'<circle r="46" fill="none" stroke="{t["line"]}" stroke-width="1.5" stroke-dasharray="3 7"/></g>'
-        f'<path class="pulse" d="{star(30)}" fill="url(#{uid}-g)"/></g>',
+        f'<g transform="translate({x + tw + 3:.1f},{y - 14})"><rect class="cur" width="9" height="18" fill="{t["hot"]}"/></g>',
+        text(32, y + 30, "human curiosity × machine intelligence", 16, t["muted"], cls="sub"),
     ]
     return svg(uid, h, t, css, "\n".join(body), "Joona Tyrninoksa. building things to understand them. human curiosity × machine intelligence")
 
@@ -158,6 +144,7 @@ if __name__ == "__main__":
     d = json.loads(DATA.read_text())
     for theme, t in THEMES.items():
         for name, s in (("header", header(theme, t)), ("languages", languages(theme, t, d)), ("stack", stack(theme, t))):
+            ElementTree.fromstring(s)   # GitHub shows the SVG as an image, which must be well-formed XML or it is a broken icon
             (ROOT / "assets" / f"{name}-{theme}.svg").write_text(s)
     print("built", len(THEMES) * 3, "svgs from", DATA.name, d["date"], d["repos"], "repos")
 
@@ -171,6 +158,10 @@ def preview(out):
     page = "<!doctype html><meta charset=utf-8><meta name=viewport content='width=device-width'><style>body{{margin:0;padding:16px;background:{bg}}}main{{max-width:846px;margin:auto}}svg,img{{display:block;width:100%;height:auto;margin:0 0 16px}}</style><main>{body}</main>"
     inline = "".join((ROOT / "assets" / f"{n}-{th}.svg").read_text() for th in THEMES for n in names)
     (out / "check.html").write_text(page.format(bg="#888", body=inline))
+    both = "".join(f'<section style="background:{bg};padding:16px;margin:0 -16px"><main>'
+                   + "".join((ROOT / "assets" / f"{n}-{th}.svg").read_text() for n in names) + "</main></section>"
+                   for th, bg in (("dark", "#0d1117"), ("light", "#ffffff")))
+    (out / "profile-preview.html").write_text(page.format(bg="#0d1117", body="").replace("<main></main>", both))
     for th, bg in (("dark", "#0d1117"), ("light", "#ffffff")):
         imgs = "".join(f'<img src="{(ROOT / "assets" / f"{n}-{th}.svg").as_uri()}">' for n in names)
         (out / f"readme-{th}.html").write_text(page.format(bg=bg, body=imgs))
